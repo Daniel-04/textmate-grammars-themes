@@ -2048,6 +2048,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ini/syntaxes/ini.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
   },
   {
+    aliases: [
+      'jlang',
+    ],
+    byteSize: 3778,
+    categories: [
+      'general',
+    ],
+    displayName: 'J',
+    funding: [
+    ],
+    hash: 'Gv8WuwQsBkKRb4Bt3I2guJpvtZaBkwwGNEB-kFhDo40',
+    lastUpdate: '2026-05-29T15:01:45Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/Daniel-04/j_textmate_grammar/main/LICENSE',
+    name: 'j',
+    scopeName: 'source.j',
+    sha: 'a9a22aa692ca34802aac45f2d46d014f219de938',
+    source: 'https://github.com/Daniel-04/j_textmate_grammar/blob/a9a22aa692ca34802aac45f2d46d014f219de938/j.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/Daniel-04/j_textmate_grammar/contents/j.tmLanguage.json?ref=a9a22aa692ca34802aac45f2d46d014f219de938',
+  },
+  {
     byteSize: 26339,
     categories: [
       'general',

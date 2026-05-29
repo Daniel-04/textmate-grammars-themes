@@ -150,6 +150,13 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['data'],
   },
   {
+    name: 'j',
+    displayName: 'J',
+    aliases: ['jlang'],
+    source: 'https://github.com/Daniel-04/j_textmate_grammar/blob/main/j.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'java',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/java/syntaxes/java.tmLanguage.json',
     categories: ['general'],

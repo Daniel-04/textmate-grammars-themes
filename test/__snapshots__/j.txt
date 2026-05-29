@@ -1,0 +1,716 @@
+#758575DD      NB. knight moves for each square of a (y,y) board
+#4D9375        kmoves=: 3 : 0
+#DBD7CACC       
+#BD976A        t
+#444444        =.
+#DBD7CACC       (
+#B8A965        >,{;
+#CB7676        ~
+#B8A965        i.
+#4D9375        y
+#DBD7CACC      ) 
+#B8A965        +
+#CB7676        "
+#4C9A91        1
+#CB7676        /
+#DBD7CACC       
+#4C9A91        _2
+#B8A965        ]
+#CB7676        \
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        _1
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        _2
+#DBD7CACC       
+#4C9A91        _1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        _1
+#DBD7CACC       
+#4C9A91        _2
+#DBD7CACC       
+#4C9A91        _2
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        _2
+#DBD7CACC       
+#4C9A91        _1
+#DBD7CACC       (
+#B8A965        *.
+#CB7676        /"
+#4C9A91        1
+#DBD7CACC       
+#BD976A        t
+#DBD7CACC       
+#B8A965        e.
+#DBD7CACC       
+#B8A965        i.
+#4D9375        y
+#DBD7CACC      ) 
+#B8A965        <
+#CB7676        @
+#B8A965        #
+#CB7676        "
+#4C9A91        1
+#DBD7CACC       
+#4D9375        y
+#B8A965        #.
+#BD976A        t
+#4D9375        )
+#4D9375        ktour=: 3 : 0
+#DBD7CACC       
+#4D9375        if.
+#DBD7CACC       
+#4C9A91        1
+#B8A965        >:
+#4D9375        y
+#DBD7CACC       
+#4D9375        do.
+#DBD7CACC       
+#B8A965        i.,
+#CB7676        ~
+#4D9375        y
+#DBD7CACC       
+#4D9375        return.
+#DBD7CACC       
+#4D9375        end.
+#DBD7CACC       
+#4D9375        m
+#444444        =.
+#DBD7CACC       
+#BD976A        kmoves
+#DBD7CACC       
+#4D9375        y
+#DBD7CACC       
+#BD976A        p
+#444444        =.
+#DBD7CACC       
+#B8A965        *:
+#4D9375        y
+#DBD7CACC       
+#BD976A        stack
+#444444        =.
+#DBD7CACC       
+#B8A965        ,
+#CB7676        &.
+#B8A965        >|.
+#4D9375        y
+#DBD7CACC       (
+#B8A965        <:
+#CB7676        /~@
+#B8A965        ]
+#DBD7CACC       
+#B8A965        #
+#CB7676        &
+#B8A965        ,
+#DBD7CACC       
+#B8A965        *
+#DBD7CACC       
+#B8A965        +
+#CB7676        /
+#DBD7CACC       
+#B8A965        ]
+#DBD7CACC      ) 
+#B8A965        i.>.-:
+#4D9375        y
+#DBD7CACC       
+#4D9375        while.
+#DBD7CACC       
+#B8A965        #
+#BD976A        stack
+#DBD7CACC       
+#4D9375        do.
+#DBD7CACC        
+#BD976A        s
+#444444        =.
+#DBD7CACC       
+#B8A965        >{:
+#BD976A        stack
+#DBD7CACC        
+#4D9375        if.
+#DBD7CACC       
+#4D9375        a:
+#DBD7CACC       
+#B8A965        e.
+#DBD7CACC       (((
+#B8A965        i.
+#BD976A        p
+#DBD7CACC      )
+#B8A965        -.
+#BD976A        s
+#DBD7CACC      )
+#B8A965        {
+#4D9375        m
+#DBD7CACC      )
+#B8A965        -.
+#CB7676        &.
+#B8A965        ><
+#BD976A        s
+#DBD7CACC       
+#4D9375        do.
+#DBD7CACC         
+#4D9375        if.
+#DBD7CACC       (
+#B8A965        #
+#BD976A        s
+#DBD7CACC      )
+#B8A965        =
+#BD976A        p
+#B8A965        -
+#4C9A91        1
+#DBD7CACC       
+#4D9375        do.
+#DBD7CACC       (
+#B8A965        ,
+#CB7676        ~
+#4D9375        y
+#DBD7CACC      )
+#B8A965        $/:
+#BD976A        s
+#B8A965        ,
+#DBD7CACC      (
+#B8A965        i.
+#BD976A        p
+#DBD7CACC      )
+#B8A965        -.
+#BD976A        s
+#DBD7CACC       
+#4D9375        return.
+#DBD7CACC       
+#4D9375        end.
+#DBD7CACC         
+#BD976A        stack
+#444444        =.
+#DBD7CACC       
+#B8A965        }:
+#BD976A        stack
+#DBD7CACC       
+#4D9375        continue.
+#DBD7CACC        
+#4D9375        end.
+#DBD7CACC        
+#BD976A        stack
+#444444        =.
+#DBD7CACC       (
+#B8A965        }:
+#BD976A        stack
+#DBD7CACC      )
+#B8A965        ,
+#DBD7CACC      (
+#B8A965        <
+#BD976A        s
+#DBD7CACC      )
+#B8A965        ,
+#CB7676        &.
+#B8A965        >
+#BD976A        s
+#B8A965        -.
+#CB7676        ~
+#DBD7CACC      (
+#B8A965        {:
+#BD976A        s
+#DBD7CACC      )
+#B8A965        {::
+#4D9375        m
+#DBD7CACC       
+#4D9375        end.
+#4D9375        )
+#758575DD      NB. Warnsdorff's algorithm
+#4D9375        ktourw=: 3 : 0
+#DBD7CACC       
+#BD976A        M
+#444444        =.
+#DBD7CACC       
+#B8A965        >
+#BD976A        kmoves
+#DBD7CACC       
+#4D9375        y
+#DBD7CACC       
+#BD976A        p
+#444444        =.
+#DBD7CACC       
+#BD976A        k
+#444444        =.
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#BD976A        b
+#444444        =.
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#B8A965        $
+#CB7676        ~
+#DBD7CACC       
+#B8A965        *:
+#4D9375        y
+#DBD7CACC       
+#4D9375        for.
+#DBD7CACC       
+#B8A965        i.<:*:
+#4D9375        y
+#DBD7CACC       
+#4D9375        do.
+#DBD7CACC        
+#BD976A        b
+#444444        =.
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#BD976A        k
+#CB7676        }
+#BD976A        b
+#DBD7CACC        
+#BD976A        p
+#444444        =.
+#DBD7CACC       
+#BD976A        p
+#B8A965        ,
+#BD976A        k
+#444444        =.
+#DBD7CACC       ((
+#B8A965        i.<.
+#CB7676        /
+#DBD7CACC      ) 
+#B8A965        +
+#CB7676        /"
+#4C9A91        1
+#DBD7CACC       
+#BD976A        b
+#B8A965        {
+#CB7676        ~
+#BD976A        j
+#B8A965        {
+#BD976A        M
+#DBD7CACC      )
+#B8A965        {
+#BD976A        j
+#444444        =.
+#DBD7CACC       (
+#B8A965        {
+#CB7676        &
+#BD976A        b
+#DBD7CACC       
+#B8A965        #
+#DBD7CACC       
+#B8A965        ]
+#DBD7CACC      ) 
+#BD976A        k
+#B8A965        {
+#BD976A        M
+#DBD7CACC       
+#4D9375        end.
+#DBD7CACC       
+#4D9375        assert.
+#DBD7CACC       
+#B8A965        ~:
+#BD976A        p
+#DBD7CACC       (
+#B8A965        ,
+#CB7676        ~
+#4D9375        y
+#DBD7CACC      )
+#B8A965        $/:
+#BD976A        p
+#4D9375        )
+#758575DD      NB. Grammar checks added below original, code above is unmodified
+#758575DD      NB. Special nouns and definition constants
+#4D9375        a.
+#DBD7CACC       
+#4D9375        a:
+#DBD7CACC       
+#4D9375        _.
+#DBD7CACC       
+#4D9375        __
+#DBD7CACC       
+#4D9375        _
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#BD976A        y
+#DBD7CACC       
+#BD976A        m
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#BD976A        u
+#DBD7CACC       
+#BD976A        v
+#4D9375        noun
+#DBD7CACC       
+#4D9375        adverb
+#DBD7CACC       
+#4D9375        conjunction
+#DBD7CACC       
+#4D9375        verb
+#DBD7CACC       
+#4D9375        monad
+#DBD7CACC       
+#4D9375        dyad
+#DBD7CACC       
+#4D9375        define
+#758575DD      NB. Control words
+#4D9375        for.
+#DBD7CACC       
+#4D9375        for_ijk.
+#DBD7CACC       
+#BD976A        ijk
+#DBD7CACC       
+#BD976A        ijk_index
+#DBD7CACC       
+#4D9375        end.
+#4D9375        break.
+#DBD7CACC       
+#4D9375        continue.
+#DBD7CACC       
+#4D9375        goto_lbl.
+#DBD7CACC       
+#4D9375        label_lbl.
+#4D9375        if.
+#DBD7CACC       
+#4D9375        else.
+#DBD7CACC       
+#4D9375        elseif.
+#4D9375        return.
+#4D9375        select.
+#DBD7CACC       
+#4D9375        case.
+#DBD7CACC       
+#4D9375        fcase.
+#4D9375        assert.
+#DBD7CACC       
+#4D9375        throw.
+#DBD7CACC       
+#4D9375        try.
+#DBD7CACC       
+#4D9375        catch.
+#DBD7CACC       
+#4D9375        catchd.
+#DBD7CACC       
+#4D9375        catcht.
+#4D9375        while.
+#DBD7CACC       
+#4D9375        whilst.
+#758575DD      NB. Verbs
+#B8A965        =
+#DBD7CACC       
+#444444        =.
+#DBD7CACC       
+#444444        =:
+#B8A965        <
+#DBD7CACC       
+#B8A965        <.
+#DBD7CACC       
+#B8A965        <:
+#DBD7CACC       
+#B8A965        >
+#DBD7CACC       
+#B8A965        >.
+#DBD7CACC       
+#B8A965        >:
+#B8A965        +
+#DBD7CACC       
+#B8A965        +.
+#DBD7CACC       
+#B8A965        +:
+#DBD7CACC       
+#B8A965        *
+#DBD7CACC       
+#B8A965        *.
+#DBD7CACC       
+#B8A965        *:
+#B8A965        -
+#DBD7CACC       
+#B8A965        -.
+#DBD7CACC       
+#B8A965        -:
+#DBD7CACC       
+#B8A965        %
+#DBD7CACC       
+#B8A965        %.
+#DBD7CACC       
+#B8A965        %:
+#B8A965        ^
+#DBD7CACC       
+#B8A965        ^.
+#B8A965        $
+#DBD7CACC       
+#B8A965        $.
+#DBD7CACC       
+#B8A965        $:
+#B8A965        ~.
+#DBD7CACC       
+#B8A965        ~:
+#B8A965        |
+#DBD7CACC       
+#B8A965        |.
+#DBD7CACC       
+#B8A965        |:
+#B8A965        ,
+#DBD7CACC       
+#B8A965        ,.
+#DBD7CACC       
+#B8A965        ,:
+#B8A965        ;
+#DBD7CACC       
+#B8A965        ;:
+#B8A965        #
+#DBD7CACC       
+#B8A965        #.
+#DBD7CACC       
+#B8A965        #:
+#B8A965        !
+#B8A965        /:
+#DBD7CACC       
+#B8A965        \:
+#B8A965        [
+#DBD7CACC       
+#B8A965        [:
+#DBD7CACC       
+#B8A965        ]
+#B8A965        {
+#DBD7CACC       
+#B8A965        {.
+#DBD7CACC       
+#B8A965        {:
+#DBD7CACC       
+#B8A965        {::
+#DBD7CACC       
+#B8A965        }.
+#DBD7CACC       
+#B8A965        }:
+#B8A965        ".
+#DBD7CACC       
+#B8A965        ":
+#B8A965        ?
+#DBD7CACC       
+#B8A965        ?.
+#B8A965        A.
+#DBD7CACC       
+#B8A965        c.
+#DBD7CACC       
+#B8A965        C.
+#DBD7CACC       
+#B8A965        e.
+#DBD7CACC       
+#B8A965        E.
+#DBD7CACC       
+#B8A965        i.
+#DBD7CACC       
+#B8A965        i:
+#DBD7CACC       
+#B8A965        I.
+#DBD7CACC       
+#B8A965        j.
+#DBD7CACC       
+#B8A965        L.
+#DBD7CACC       
+#B8A965        o.
+#DBD7CACC       
+#B8A965        p.
+#DBD7CACC       
+#B8A965        p..
+#DBD7CACC       
+#B8A965        p:
+#DBD7CACC       
+#B8A965        q:
+#DBD7CACC       
+#B8A965        r.
+#DBD7CACC       
+#B8A965        T.
+#DBD7CACC       
+#B8A965        u:
+#DBD7CACC       
+#B8A965        x:
+#DBD7CACC       
+#B8A965        Z:
+#DBD7CACC       
+#B8A965        u.
+#DBD7CACC       
+#B8A965        v.
+#DBD7CACC       
+#B8A965        s:
+#B8A965        _:
+#DBD7CACC       
+#B8A965        __:
+#DBD7CACC       
+#B8A965        _9:
+#DBD7CACC       
+#B8A965        _8:
+#DBD7CACC       
+#B8A965        _7:
+#DBD7CACC       
+#B8A965        _6:
+#DBD7CACC       
+#B8A965        _5:
+#DBD7CACC       
+#B8A965        _4:
+#DBD7CACC       
+#B8A965        _3:
+#DBD7CACC       
+#B8A965        _2:
+#DBD7CACC       
+#B8A965        _1:
+#DBD7CACC       
+#B8A965        _0:
+#DBD7CACC       
+#B8A965        0:
+#DBD7CACC       
+#B8A965        1:
+#DBD7CACC       
+#B8A965        2:
+#DBD7CACC       
+#B8A965        3:
+#DBD7CACC       
+#B8A965        4:
+#DBD7CACC       
+#B8A965        5:
+#DBD7CACC       
+#B8A965        6:
+#DBD7CACC       
+#B8A965        7:
+#DBD7CACC       
+#B8A965        8:
+#DBD7CACC       
+#B8A965        9:
+#758575DD      NB. Adverbs and Conjunctions
+#CB7676        ^:
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#CB7676        .
+#CB7676        S::
+#CB7676        :
+#DBD7CACC       
+#CB7676        :.
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       
+#CB7676        ;.
+#DBD7CACC       
+#CB7676        !.
+#DBD7CACC       
+#CB7676        !:
+#CB7676        /
+#DBD7CACC       
+#CB7676        /.
+#DBD7CACC       
+#CB7676        /..
+#DBD7CACC       
+#CB7676        \
+#DBD7CACC       
+#CB7676        \.
+#CB7676        [.
+#DBD7CACC       
+#CB7676        ].
+#DBD7CACC       
+#CB7676        ]:
+#CB7676        }
+#DBD7CACC       
+#CB7676        "
+#DBD7CACC       
+#CB7676        `
+#DBD7CACC       
+#CB7676        `:
+#CB7676        @
+#DBD7CACC       
+#CB7676        @.
+#DBD7CACC       
+#CB7676        @:
+#DBD7CACC       
+#CB7676        &
+#DBD7CACC       
+#CB7676        &.
+#DBD7CACC       
+#CB7676        &:
+#DBD7CACC       
+#CB7676        &.:
+#CB7676        b.
+#DBD7CACC       
+#CB7676        f.
+#DBD7CACC       
+#CB7676        F.
+#DBD7CACC       
+#CB7676        F..
+#DBD7CACC       
+#CB7676        F.:
+#DBD7CACC       
+#CB7676        F:
+#DBD7CACC       
+#CB7676        F:.
+#DBD7CACC       
+#CB7676        F::
+#DBD7CACC       
+#CB7676        H.
+#DBD7CACC       
+#CB7676        L:
+#DBD7CACC       
+#CB7676        m.
+#DBD7CACC       
+#CB7676        M.
+#DBD7CACC       
+#CB7676        S:
+#DBD7CACC       
+#CB7676        t.
+#DBD7CACC       
+#CB7676        d.
+#DBD7CACC       
+#CB7676        D.
+#DBD7CACC       
+#CB7676        D:
+#758575DD      NB. Definition forms
+#4D9375        myverb =: 3 : 0
+#DBD7CACC        
+#4D9375        y
+#DBD7CACC       
+#B8A965        +
+#DBD7CACC       
+#4C9A91        10
+#4D9375        )
+#4D9375        myadverb =: 1 : 0
+#DBD7CACC        
+#4D9375        u
+#DBD7CACC       
+#4D9375        y
+#4D9375        )
+#B8A965        +
+#DBD7CACC       
+#444444        {{
+#DBD7CACC       
+#4D9375        u
+#CB7676        /
+#DBD7CACC       
+#B8A965        i.
+#DBD7CACC       
+#4D9375        y
+#DBD7CACC       
+#444444        }}
+#DBD7CACC       
+#4C9A91        9
+#758575DD      NB. Strings
+#C98A7D77      '
+#C98A7D        Hello World!
+#C98A7D77      '
+#C98A7D77      '
+#C98A7D        I
+#C98A7D77      ''
+#C98A7D        ts a sunny day
+#C98A7D77      '
+#C98A7D77      '
+#C98A7D        And he said: "The quick brown fox jumps over the lazy dog"
+#C98A7D77      '
+#758575DD      NB. Modified from original every primitive added for grammar validation
+#758575DD      NB. From https://code.jsoftware.com/wiki/Essays/Knight%27s_Tour#Warnsdorff

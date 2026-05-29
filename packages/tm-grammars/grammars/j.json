@@ -1,0 +1,233 @@
+{
+  "displayName": "J",
+  "fileTypes": [
+    "ijs",
+    "ijt",
+    "ijx",
+    "ijp",
+    "jproj"
+  ],
+  "name": "j",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#control_words"
+    },
+    {
+      "include": "#assignment"
+    },
+    {
+      "include": "#direct_definition"
+    },
+    {
+      "include": "#explicit_definition"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#special_nouns"
+    },
+    {
+      "include": "#primitives"
+    },
+    {
+      "include": "#variable_name"
+    }
+  ],
+  "repository": {
+    "assignment": {
+      "patterns": [
+        {
+          "match": "=[.:]",
+          "name": "keyword.operator.assignment.j"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "begin": "(^[\\t ]+)?(?=NB\\.)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.j"
+            }
+          },
+          "end": "(?!\\G)((?!^)[\\t ]+\\n)?",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.trailing.j"
+            }
+          },
+          "patterns": [
+            {
+              "begin": "NB\\.",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.j"
+                }
+              },
+              "end": "\\n",
+              "name": "comment.line.j"
+            }
+          ]
+        }
+      ]
+    },
+    "control_words": {
+      "patterns": [
+        {
+          "match": "\\b(assert|break|continue|else|elseif|for|if|do|end|return|select|case|fcase|throw|try|catchd??|catcht|while|whilst)\\.(?=\\s|$)",
+          "name": "keyword.control.j"
+        },
+        {
+          "match": "\\b(for_|goto_|label_)[A-Za-z][0-9A-Z_a-z]*\\.(?=\\s|$)",
+          "name": "keyword.control.j"
+        }
+      ]
+    },
+    "direct_definition": {
+      "begin": "\\{\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.begin.j"
+        }
+      },
+      "end": "}}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.end.j"
+        }
+      },
+      "name": "meta.definition.direct.j",
+      "patterns": [
+        {
+          "match": "\\b([mnuvxy]\\.?)\\b",
+          "name": "constant.language.definition.argument.j"
+        },
+        {
+          "include": "$self"
+        }
+      ]
+    },
+    "explicit_definition": {
+      "begin": "^\\s*(?:\\w+\\s*=[.:]\\s*)?(?:(?:noun|adverb|conjunction|verb|monad|dyad)\\s+define|[0-4]\\s*:\\s*0)\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.definition.j"
+        }
+      },
+      "end": "^\\)\\s*$",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.definition.end.j"
+        }
+      },
+      "name": "meta.definition.explicit.j",
+      "patterns": [
+        {
+          "match": "\\b([mnuvxy]\\.?)\\b",
+          "name": "constant.language.definition.argument.j"
+        },
+        {
+          "include": "$self"
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "(?<![.\\w\\d])_?(?:\\d+\\.\\d*|\\.\\d+)(?:[ejrx][-+]?\\d+\\.?\\d*)?",
+          "name": "constant.numeric.float.j"
+        },
+        {
+          "match": "(?<![.\\w\\d])_?\\d+(?![:\\d])(?:[ejrx][-+]?\\d+\\.?\\d*)?",
+          "name": "constant.numeric.integer.j"
+        }
+      ]
+    },
+    "primitives": {
+      "patterns": [
+        {
+          "match": "S::|F::|F:\\.|F\\.\\.|F\\.:?|F:|&\\.:|@\\.|@:|&\\.|&:|!\\.|!:|d\\.|D\\.|D:|H\\.|L:|m\\.|S:|\\^:|`:|;\\.|\\[\\.|]\\.|]:|:\\.|::|b\\.|\"(?![.:])|}(?![.:])|[\\&.:@`]",
+          "name": "keyword.operator.conjunction.j"
+        },
+        {
+          "match": "/\\.\\.?|/(?!:)|\\\\\\.|\\\\(?!:)|~(?![.:])|f\\.|M\\.|t\\.|t:",
+          "name": "keyword.operator.adverb.j"
+        },
+        {
+          "match": "_\\d:|\\{::|p\\.\\.|__:|_:|\\d:|\\+\\.|\\+:|\\*\\.|\\*:|-\\.|-:|%\\.|%:|\\^\\.|\\^:|\\$\\.|\\$:|~\\.|~:|\\|\\.|\\|:|,\\.|,:|#\\.|#:|\\?\\.|\\?:|\"\\.|\":|/:|\\\\:|;:|<\\.|<:|>\\.|>:|i\\.|i:|j\\.|o\\.|p\\.|p:|q\\.|q:|r\\.|A\\.|c\\.|C\\.|e\\.|E\\.|I\\.|L\\.|T\\.|s:|u\\.|u:|v\\.|x:|Z:|\\{\\.|\\{:|\\[:|}\\.|}:|[]!-%*-\\-;-?\\[^{|}]",
+          "name": "support.function.verb.j"
+        }
+      ]
+    },
+    "special_nouns": {
+      "patterns": [
+        {
+          "match": "\\b_\\.(?=\\s|$)",
+          "name": "constant.language.indeterminate.j"
+        },
+        {
+          "match": "\\b__(?!:)\\b",
+          "name": "constant.language.infinity.j"
+        },
+        {
+          "match": "\\b_(?![.:_\\d])\\b",
+          "name": "constant.language.infinity.j"
+        },
+        {
+          "match": "\\ba\\.(?=\\s|$)",
+          "name": "constant.language.alphabet.j"
+        },
+        {
+          "match": "\\ba:(?=\\s|$)",
+          "name": "constant.language.ace.j"
+        },
+        {
+          "match": "\\b(noun|adverb|conjunction|verb|monad|dyad|define)\\b",
+          "name": "constant.language.definition.j"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "begin": "'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.j"
+            }
+          },
+          "end": "'[\\t ]*|(?=\\n)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.j"
+            }
+          },
+          "name": "string.quoted.single.j",
+          "patterns": [
+            {
+              "match": "''",
+              "name": "constant.character.escape.j"
+            }
+          ]
+        }
+      ]
+    },
+    "variable_name": {
+      "patterns": [
+        {
+          "match": "\\b[A-Za-z][0-9A-Z_a-z]*\\b(?![.:])",
+          "name": "variable.other.readwrite.j"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.j"
+}
