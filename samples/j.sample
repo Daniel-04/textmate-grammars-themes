@@ -1,0 +1,97 @@
+NB. knight moves for each square of a (y,y) board
+kmoves=: 3 : 0
+ t=. (>,{;~i.y) +"1/ _2]\2 1 2 _1 1 2 1 _2 _1 2 _1 _2 _2 1 _2 _1
+ (*./"1 t e. i.y) <@#"1 y#.t
+)
+
+ktour=: 3 : 0
+ if. 1>:y do. i.,~y return. end.
+ m=. kmoves y
+ p=. *:y
+ stack=. ,&.>|.y (<:/~@] #&, * +/ ]) i.>.-:y
+ while. #stack do.
+  s=. >{:stack
+  if. a: e. (((i.p)-.s){m)-.&.><s do.
+   if. (#s)=p-1 do. (,~y)$/:s,(i.p)-.s return. end.
+   stack=. }:stack continue.
+  end.
+  stack=. (}:stack),(<s),&.>s-.~({:s){::m
+ end.
+)
+
+NB. Warnsdorff's algorithm
+ktourw=: 3 : 0
+ M=. >kmoves y
+ p=. k=. 0
+ b=. 1 $~ *:y
+ for. i.<:*:y do.
+  b=. 0 k}b
+  p=. p,k=. ((i.<./) +/"1 b{~j{M){j=. ({&b # ]) k{M
+ end.
+ assert. ~:p
+ (,~y)$/:p
+)
+
+NB. Grammar checks added below original, code above is unmodified
+NB. Special nouns and definition constants
+a. a: _. __ _ x y m n u v
+noun adverb conjunction verb monad dyad define
+
+NB. Control words
+for. for_ijk. ijk ijk_index end.
+break. continue. goto_lbl. label_lbl.
+if. else. elseif.
+return.
+select. case. fcase.
+assert. throw. try. catch. catchd. catcht.
+while. whilst.
+
+NB. Verbs
+= =. =:
+< <. <: > >. >:
++ +. +: * *. *:
+- -. -: % %. %:
+^ ^.
+$ $. $:
+~. ~:
+| |. |:
+, ,. ,:
+; ;:
+# #. #:
+!
+/: \:
+[ [: ]
+{ {. {: {:: }. }:
+". ":
+? ?.
+A. c. C. e. E. i. i: I. j. L. o. p. p.. p: q: r. T. u: x: Z: u. v. s:
+_: __: _9: _8: _7: _6: _5: _4: _3: _2: _1: _0: 0: 1: 2: 3: 4: 5: 6: 7: 8: 9:
+
+NB. Adverbs and Conjunctions
+^: ~ .
+S::
+: :. :: ;. !. !:
+/ /. /.. \ \.
+[. ]. ]:
+} " ` `:
+@ @. @: & &. &: &.:
+b. f. F. F.. F.: F: F:. F:: H. L: m. M. S: t. d. D. D:
+
+NB. Definition forms
+myverb =: 3 : 0
+  y + 10
+)
+
+myadverb =: 1 : 0
+  u y
+)
+
++ {{ u/ i. y }} 9
+
+NB. Strings
+'Hello World!'
+'I''ts a sunny day'
+'And he said: "The quick brown fox jumps over the lazy dog"'
+
+NB. Modified from original every primitive added for grammar validation
+NB. From https://code.jsoftware.com/wiki/Essays/Knight%27s_Tour#Warnsdorff
